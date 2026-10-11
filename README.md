@@ -86,4 +86,3 @@ This implementation was developed with AI assistance. The submission explanation
 ## Project summary PDF
 
 A concise overview of the technologies, architecture, security measures, tests, and deployment is available in [the project summary PDF](output/pdf/hackheist-project-summary.pdf).
-
