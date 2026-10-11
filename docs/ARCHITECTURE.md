@@ -1,6 +1,6 @@
 # Architecture proposal
 
-Status: proposed; implement after specification and plan review.
+Status: specification approved on 11 October 2026; implement after plan review.
 
 ## Runtime
 

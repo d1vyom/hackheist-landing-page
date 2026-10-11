@@ -1,6 +1,6 @@
 # HackHeist landing page specification
 
-Status: proposed for user review. No product code has been written.
+Status: approved by the user on 11 October 2026. No product code has been written.
 
 ## Purpose and success
 
