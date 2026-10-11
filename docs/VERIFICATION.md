@@ -8,7 +8,7 @@ User screenshots exposed artwork cuts and overlap missed by the earlier geometry
 - Full local browser suite: **27 passed**. ESLint, TypeScript and production build passed.
 - Focused independent review: no actionable findings.
 - Visual inspection at 390px confirmed both complete ribbons and separated edition labels. Ignored evidence: `.superpowers/mobile-fix/fixed-mobile.png` and `full-page.png`.
-- Live deployment verification pending until release.
+- Live production suite: **27 passed**, including all four mobile artwork regressions. Deployed application commit `442c664`; deployment `dpl_6C77EAJXWCzhc379aJroD4wTc3ia`, state READY, stable public URL unchanged.
 
 ## Signal Ribbon redesign — 11 October 2026
 
