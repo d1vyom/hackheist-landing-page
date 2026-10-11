@@ -152,6 +152,7 @@ export function DetailsSection() {
       <div className="shell details-grid">
         <div>
           <SectionLabel number="03">THE PLAN</SectionLabel>
+          <p className="registration-notice">{event.registrationNotice}</p>
           <h2 id="details-heading">
             Your next
             <br />
@@ -213,7 +214,7 @@ export function DetailsSection() {
               )}
             </svg>
             <p>
-              <strong>{event.registrationNotice}</strong>
+              <strong>Make something that matters.</strong>
               <span>Keep your ideas ready.</span>
             </p>
             <Arrow diagonal />

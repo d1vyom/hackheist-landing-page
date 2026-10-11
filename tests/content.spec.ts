@@ -32,25 +32,31 @@ test("renders exactly five sections in order with required event content", async
   ).toBeVisible();
 });
 
-test("both registration links reach the announced fallback", async ({
-  page,
-}) => {
-  await page.goto("/");
-  const links = page.getByRole("link", { name: "Register Now", exact: true });
-  await expect(links).toHaveCount(2);
-  for (let i = 0; i < 2; i++) {
+for (const width of [390, 1366]) {
+  test(`both registration links reach the announced fallback at ${width}px`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 844 });
     await page.goto("/");
-    await expect(links.nth(i)).toHaveAttribute("href", "#event-details");
-    await links.nth(i).click();
-    await expect(page).toHaveURL(/#event-details$/);
-    await expect(
-      page.getByText("Registration link coming soon.", { exact: true }),
-    ).toBeVisible();
-    await expect(
-      page.getByText("Date to be announced", { exact: true }),
-    ).toBeVisible();
-  }
-});
+    const links = page.getByRole("link", { name: "Register Now", exact: true });
+    await expect(links).toHaveCount(2);
+    for (let i = 0; i < 2; i++) {
+      await page.goto("/");
+      await expect(links.nth(i)).toHaveAttribute("href", "#event-details");
+      await links.nth(i).click();
+      await expect(page).toHaveURL(/#event-details$/);
+      await expect(
+        page.getByText("Registration link coming soon.", { exact: true }),
+      ).toBeVisible();
+      await expect(
+        page.getByText("Registration link coming soon.", { exact: true }),
+      ).toBeInViewport();
+      await expect(
+        page.getByText("Date to be announced", { exact: true }),
+      ).toBeVisible();
+    }
+  });
+}
 
 test("navigation reaches the named sections", async ({ page }) => {
   await page.goto("/");

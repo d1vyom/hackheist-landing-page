@@ -9,6 +9,11 @@ for (const width of [360, 390, 768, 1024, 1366, 1920]) {
         () => document.documentElement.scrollWidth <= window.innerWidth,
       ),
     ).toBe(true);
+    for (const link of await page.locator("a").all()) {
+      const target = await link.boundingBox();
+      expect(target!.width).toBeGreaterThanOrEqual(44);
+      expect(target!.height).toBeGreaterThanOrEqual(44);
+    }
     const links = page.getByRole("link", { name: "Register Now", exact: true });
     await expect(links).toHaveCount(2);
     for (const link of await links.all()) {
