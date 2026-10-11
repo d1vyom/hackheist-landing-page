@@ -1,6 +1,6 @@
-# Architecture proposal
+# Architecture
 
-Status: specification approved on 11 October 2026; implement after plan review.
+Status: implemented and verified on 11 October 2026.
 
 ## Runtime
 
@@ -8,23 +8,23 @@ Browser → Vercel → Next.js server-rendered landing page. Static event conten
 
 ## Planned files
 
-| Path | Responsibility |
-| --- | --- |
-| `src/app/layout.tsx` | Document language, metadata, shared shell |
-| `src/app/page.tsx` | Compose exactly five event sections |
-| `src/app/globals.css` | Tailwind entry, design tokens, responsive layout, motion preferences |
-| `src/components/site-header.tsx` | Brand, navigation, keyboard-accessible links |
-| `src/components/hero-art.tsx` | Original decorative SVG/CSS illustration |
-| `src/components/register-link.tsx` | Consistent registration action using shared configuration |
-| `src/components/event-sections.tsx` | About, highlights, event details, final CTA |
-| `src/lib/event.ts` | Typed event facts, highlight descriptions, registration configuration |
-| `tests/landing.spec.ts` | Browser behavior and viewport acceptance tests |
-| `tests/accessibility.spec.ts` | Automated accessibility checks |
-| `next.config.ts` | Deployment-compatible security headers |
-| `playwright.config.ts` | Browser test configuration and local server lifecycle |
-| `README.md` | Setup, scripts, customization, live/repository links |
-| `docs/VERIFICATION.md` | Actual validation evidence and remaining limitations |
-| `docs/SUBMISSION.md` | Deliverable links, short explanation, separate prior-project reminder |
+| Path                                | Responsibility                                                        |
+| ----------------------------------- | --------------------------------------------------------------------- |
+| `src/app/layout.tsx`                | Document language, metadata, shared shell                             |
+| `src/app/page.tsx`                  | Compose exactly five event sections                                   |
+| `src/app/globals.css`               | Tailwind entry, design tokens, responsive layout, motion preferences  |
+| `src/components/site-header.tsx`    | Brand, navigation, keyboard-accessible links                          |
+| `src/components/hero-art.tsx`       | Original decorative SVG/CSS illustration                              |
+| `src/components/register-link.tsx`  | Consistent registration action using shared configuration             |
+| `src/components/event-sections.tsx` | About, highlights, event details, final CTA                           |
+| `src/lib/event.ts`                  | Typed event facts, highlight descriptions, registration configuration |
+| `tests/landing.spec.ts`             | Browser behavior and viewport acceptance tests                        |
+| `tests/accessibility.spec.ts`       | Automated accessibility checks                                        |
+| `next.config.ts`                    | Deployment-compatible security headers                                |
+| `playwright.config.ts`              | Browser test configuration and local server lifecycle                 |
+| `README.md`                         | Setup, scripts, customization, live/repository links                  |
+| `docs/VERIFICATION.md`              | Actual validation evidence and remaining limitations                  |
+| `docs/SUBMISSION.md`                | Deliverable links, short explanation, separate prior-project reminder |
 
 ## Boundaries
 

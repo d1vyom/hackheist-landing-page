@@ -1,0 +1,15 @@
+.git
+.next
+.vercel
+.superpowers
+.env*
+node_modules
+test-results
+playwright-report
+*.tsbuildinfo
+next-env.d.ts
+tests
+docs
+README.md
+AGENTS.md
+playwright.config.ts

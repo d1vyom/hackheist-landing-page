@@ -1,6 +1,6 @@
 # HackHeist Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Deliver the approved five-section HackHeist landing page, a public GitHub repository, and a verified Vercel deployment.
 
@@ -12,7 +12,7 @@
 
 **Architecture map:** `docs/ARCHITECTURE.md`
 
-**Status:** Ready for user review. Recommended execution: native implementation in this chat, followed by an independent review.
+**Status:** Approved and executed natively on 11 October 2026, with independent review and test-first fixes. Tasks 1–4 complete; final deployment packaging and remote alignment in progress.
 
 ## Global Constraints
 
@@ -44,14 +44,14 @@
 
 **Interfaces:** Produces npm scripts `dev`, `build`, `start`, `lint`, `typecheck`, `test`, and `test:e2e`. `npm test` runs the full browser suite. Playwright uses `BASE_URL` when provided; otherwise starts the local development server on port 3000. Export `RootLayout({ children }: Readonly<{ children: React.ReactNode }>)` and default `Home(): React.JSX.Element`.
 
-- [ ] Verify Node/npm versions, compatible current framework releases, Git identity, GitHub connector authentication, and Vercel authentication without printing credentials. Read the relevant Sites, implementation, and Vercel skills before using their workflows.
-- [ ] Configure tooling and dependencies; ignore `.env*` except an optional sanitized example, `.vercel/`, `.next/`, `node_modules/`, `test-results/`, and `playwright-report/`. Use an empty route as the test host, not generated product content.
-- [ ] Write `renders the HackHeist identity` with `await expect(page.getByRole('heading', { level: 1, name: 'HACKHEIST', exact: true })).toBeVisible()` and `await expect(page).toHaveTitle(/HackHeist.*GDG/)`.
-- [ ] Run `npm test -- --grep "renders the HackHeist identity"`. Confirm assertion failure because the identity is absent; connection errors do not count as the red phase.
-- [ ] Implement the minimal identity, document language `en`, metadata, and Tailwind entry to pass.
-- [ ] Run `npm test`, `npm run typecheck`, and `npm run lint`; require all to pass.
-- [ ] Review staged files for secrets; commit `chore: establish Next.js foundation and test harness`.
-- [ ] Create an available public repository based on `hackheist-landing-page` using the authenticated user's account. Set `origin`, push `main`, and record the exact URL. If authentication fails, preserve commits and report the blocker without inventing a URL.
+- [x] Verify Node/npm versions, compatible current framework releases, Git identity, GitHub connector authentication, and Vercel authentication without printing credentials. Read the relevant Sites, implementation, and Vercel skills before using their workflows.
+- [x] Configure tooling and dependencies; ignore `.env*` except an optional sanitized example, `.vercel/`, `.next/`, `node_modules/`, `test-results/`, and `playwright-report/`. Use an empty route as the test host, not generated product content.
+- [x] Write `renders the HackHeist identity` with `await expect(page.getByRole('heading', { level: 1, name: 'HACKHEIST', exact: true })).toBeVisible()` and `await expect(page).toHaveTitle(/HackHeist.*GDG/)`.
+- [x] Run `npm test -- --grep "renders the HackHeist identity"`. Confirm assertion failure because the identity is absent; connection errors do not count as the red phase.
+- [x] Implement the minimal identity, document language `en`, metadata, and Tailwind entry to pass.
+- [x] Run `npm test`, `npm run typecheck`, and `npm run lint`; require all to pass.
+- [x] Review staged files for secrets; commit `chore: establish Next.js foundation and test harness`.
+- [x] Create an available public repository based on `hackheist-landing-page` using the authenticated user's account. Set `origin`, push `main`, and record the exact URL. If authentication fails, preserve commits and report the blocker without inventing a URL.
 
 ## Task 2: Complete semantic content and registration flow
 
@@ -59,14 +59,14 @@
 
 **Interfaces:** Export `event` with readonly string properties `name`, `tagline`, `organizer`, `edition`, `venue`, `time`, `dateNotice`, `registrationHref`, and `registrationNotice`. Export `highlights: readonly { title: string; description: string }[]`. Export named components `SiteHeader()`, `RegisterLink({ className? }: { className?: string })`, `AboutSection()`, `HighlightsSection()`, `DetailsSection()`, and `FinalCtaSection()`, each returning `React.JSX.Element`. `RegisterLink` consumes `event.registrationHref`; sections consume `event` and `highlights`.
 
-- [ ] Write `renders exactly five sections in order`: assert `main > section` has IDs `['hero', 'about', 'highlights', 'event-details', 'join']`, one h1, the four highlight titles/descriptions from the spec, and required visible event facts.
-- [ ] Write `both registration links reach the announced fallback`: assert exactly two links named `Register Now`, each href `#event-details`; click each independently and assert URL hash, visible notice “Registration link coming soon.”, and date notice “Date to be announced”.
-- [ ] Write `navigation reaches the named sections`: click header links for About, Highlights, and Event Details; assert the corresponding URL hashes and headings are visible.
-- [ ] Write `essential content works without JavaScript` using `browser.newContext({ javaScriptEnabled: false })`: assert all five sections, facts, and both registration destinations remain available; clicking a registration link updates the hash.
-- [ ] Run `npm test -- --grep "five sections|registration links|navigation reaches|without JavaScript"`; verify failures show missing page behavior.
-- [ ] Implement the shared content and server components, with exact copy from the spec, a concise original About paragraph, and native anchors. Render the hero in page composition and a compact footer outside `main`. No menu or unrelated features.
-- [ ] Run `npm test`, `npm run typecheck`, and `npm run lint`; require all to pass.
-- [ ] Review staged files, commit `feat: build five-section HackHeist event page`, and push.
+- [x] Write `renders exactly five sections in order`: assert `main > section` has IDs `['hero', 'about', 'highlights', 'event-details', 'join']`, one h1, the four highlight titles/descriptions from the spec, and required visible event facts.
+- [x] Write `both registration links reach the announced fallback`: assert exactly two links named `Register Now`, each href `#event-details`; click each independently and assert URL hash, visible notice “Registration link coming soon.”, and date notice “Date to be announced”.
+- [x] Write `navigation reaches the named sections`: click header links for About, Highlights, and Event Details; assert the corresponding URL hashes and headings are visible.
+- [x] Write `essential content works without JavaScript` using `browser.newContext({ javaScriptEnabled: false })`: assert all five sections, facts, and both registration destinations remain available; clicking a registration link updates the hash.
+- [x] Run `npm test -- --grep "five sections|registration links|navigation reaches|without JavaScript"`; verify failures show missing page behavior.
+- [x] Implement the shared content and server components, with exact copy from the spec, a concise original About paragraph, and native anchors. Render the hero in page composition and a compact footer outside `main`. No menu or unrelated features.
+- [x] Run `npm test`, `npm run typecheck`, and `npm run lint`; require all to pass.
+- [x] Review staged files, commit `feat: build five-section HackHeist event page`, and push.
 
 ## Task 3: Visual design, responsive layout, and accessible motion
 
@@ -74,15 +74,15 @@
 
 **Interfaces:** Export `HeroArt(): React.JSX.Element`, a decorative local SVG/CSS composition with `aria-hidden="true"`. CSS defines warm white, charcoal, blue, red, yellow, and green tokens; shared spacing, typography, focus, and reduced-motion behavior. Skip link targets `main#main-content` with `tabIndex={-1}`.
 
-- [ ] Write viewport tests for all six specified widths: `expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true)`; assert each primary action is visible, has at least 44px height, and does not intersect its adjacent text.
-- [ ] Write `keyboard reaches main content and registration`: Tab to the skip link, assert focus/visible state, press Enter, assert main is focused, then traverse to the hero action and activate it without a pointer.
-- [ ] Write `reduced motion disables animation and smooth scrolling`: emulate reduced motion and assert zero nonzero-duration decorative CSS animations, no running Web Animations, and root computed `scrollBehavior` is `auto`.
-- [ ] Write `page has no serious accessibility violations` with `new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()` and assert an empty violations array. Run at desktop and mobile widths.
-- [ ] Run the new tests and confirm expected failures for missing focus, target sizing, motion overrides, or layout behavior. If a check already passes, retain it as regression coverage without claiming a red phase for it.
-- [ ] Implement the editorial layout: oversized responsive title, asymmetric hero with geometric art, spacious About, four flat highlight cards, ticket-like event details, and bold final CTA. Keep each section visually distinct within a coherent system.
-- [ ] Add short transform/opacity hover transitions, at most one subtle decorative loop, and reduced-motion overrides; content is always present and visible.
-- [ ] Run `npm test`, type checking, and lint. Capture and inspect full-page screenshots at all six widths; manually inspect 200% browser zoom, focus outlines, text wrapping, action overlap, and the event pass. Fix any defect with a reproducing test when applicable.
-- [ ] Review staged files, commit `style: refine responsive event identity and accessible motion`, and push.
+- [x] Write viewport tests for all six specified widths: `expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true)`; assert each primary action is visible, has at least 44px height, and does not intersect its adjacent text.
+- [x] Write `keyboard reaches main content and registration`: Tab to the skip link, assert focus/visible state, press Enter, assert main is focused, then traverse to the hero action and activate it without a pointer.
+- [x] Write `reduced motion disables animation and smooth scrolling`: emulate reduced motion and assert zero nonzero-duration decorative CSS animations, no running Web Animations, and root computed `scrollBehavior` is `auto`.
+- [x] Write `page has no serious accessibility violations` with `new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()` and assert an empty violations array. Run at desktop and mobile widths.
+- [x] Run the new tests and confirm expected failures for missing focus, target sizing, motion overrides, or layout behavior. If a check already passes, retain it as regression coverage without claiming a red phase for it.
+- [x] Implement the editorial layout: oversized responsive title, asymmetric hero with geometric art, spacious About, four flat highlight cards, ticket-like event details, and bold final CTA. Keep each section visually distinct within a coherent system.
+- [x] Add short transform/opacity hover transitions, at most one subtle decorative loop, and reduced-motion overrides; content is always present and visible.
+- [x] Run `npm test`, type checking, and lint. Capture and inspect full-page screenshots at all six widths; manually inspect 200% browser zoom, focus outlines, text wrapping, action overlap, and the event pass. Fix any defect with a reproducing test when applicable.
+- [x] Review staged files, commit `style: refine responsive event identity and accessible motion`, and push.
 
 ## Task 4: Production and security verification
 
@@ -90,13 +90,13 @@
 
 **Interfaces:** `next.config.ts` exports NextConfig with `headers()` applying `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Referrer-Policy: strict-origin-when-cross-origin`, and `Permissions-Policy: camera=(), microphone=(), geolocation=()` to all page routes. Add CSP only after validating compatibility with actual Next.js assets and rendering.
 
-- [ ] Write `serves defensive page headers`: request `/` and assert status 200 plus the exact four header values above. Run it and confirm missing-header failures.
-- [ ] Implement headers. Review dependencies, tracked files, rendering, external links, and configuration using the scoped security-diff-scan workflow. No credentials or unsafe raw HTML rendering may be committed.
-- [ ] Run `npm test`, `npm run typecheck`, `npm run lint`, `npm audit`, and `npm run build`; investigate and fix actionable failures rather than suppressing output. Report any unresolved advisory and its actual impact.
-- [ ] Start the built app on an available local port and rerun the full browser suite with `BASE_URL` pointing to that production server. Inspect browser console errors and failed requests.
-- [ ] Record commands, actual pass/fail counts, screenshot observations, red/green evidence, dependency findings, and remaining limitations in `docs/VERIFICATION.md`.
-- [ ] Document setup, scripts, content configuration, registration fallback replacement, and design decisions in `README.md`.
-- [ ] Review staged changes, commit `test: verify production accessibility and security`, and push.
+- [x] Write `serves defensive page headers`: request `/` and assert status 200 plus the exact four header values above. Run it and confirm missing-header failures.
+- [x] Implement headers. Review dependencies, tracked files, rendering, external links, and configuration using the scoped security-diff-scan workflow. No credentials or unsafe raw HTML rendering may be committed.
+- [x] Run `npm test`, `npm run typecheck`, `npm run lint`, `npm audit`, and `npm run build`; investigate and fix actionable failures rather than suppressing output. Report any unresolved advisory and its actual impact.
+- [x] Start the built app on an available local port and rerun the full browser suite with `BASE_URL` pointing to that production server. Inspect browser console errors and failed requests.
+- [x] Record commands, actual pass/fail counts, screenshot observations, red/green evidence, dependency findings, and remaining limitations in `docs/VERIFICATION.md`.
+- [x] Document setup, scripts, content configuration, registration fallback replacement, and design decisions in `README.md`.
+- [x] Review staged changes, commit `test: verify production accessibility and security`, and push.
 
 ## Task 5: Vercel deployment and submission package
 

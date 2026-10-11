@@ -1,3 +1,5 @@
+Always initialize new programming and development tasks using the Superpowers TDD and specification workflow.
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 ## This is NOT the Next.js you know
