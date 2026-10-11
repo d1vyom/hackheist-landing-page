@@ -70,4 +70,8 @@ Public URL: https://hackheist-landing-page.vercel.app
 
 The complete 19-test suite passed against that public URL, including public HTTP 200, all four defensive headers, mobile/desktop registration notice viewport assertions, accessibility scans, all six layout widths, reduced motion, keyboard navigation, enlarged text, and JavaScript-disabled browsing. Browser errors and failed requests were not observed.
 
-A final source-packaging verification and redeployment align deployment exclusions and documentation with the completed repository. The live URL remains the same.
+Final production deployment: `dpl_3gqsWNgBEubxZxzHVt6pmnBgVq2w`, state `READY`.
+
+The final deployment source tree contains exactly 16 build/source files. All 16 SHA-1 content hashes match the corresponding local files; no credential files, scratch logs, screenshots, test artifacts, tests, or documentation appear in that deployment tree. The full 19-test suite also passed against the stable public URL after this redeployment. Mobile and desktop live screenshots were inspected at 390 and 1366px.
+
+Application implementation commit: `26a95a6`. Deployment-packaging commit: `3410689`. Final completion records are a documentation-only commit, excluded from the deployment; the verified deployable source remains identical.

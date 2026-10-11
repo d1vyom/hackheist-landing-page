@@ -12,7 +12,7 @@
 
 **Architecture map:** `docs/ARCHITECTURE.md`
 
-**Status:** Approved and executed natively on 11 October 2026, with independent review and test-first fixes. Tasks 1–4 complete; final deployment packaging and remote alignment in progress.
+**Status:** Approved and executed natively on 11 October 2026, with independent review and test-first fixes. All five tasks complete. Production deployment is public, its 16 source files match local hashes, and the full 19-test suite passes on the live URL.
 
 ## Global Constraints
 
@@ -104,12 +104,12 @@
 
 **Interfaces:** Produces the exact public GitHub repository URL, stable Vercel production URL, and a 3–5 line submission explanation. No private account data or deployment credentials enter source control.
 
-- [ ] Confirm clean Git status, pushed commits, successful local checks, and authenticated Vercel access. Link or create the Vercel project for this folder and deploy the verified build to production. Keep `.vercel/` ignored.
-- [ ] Verify deployment completion and public access without authentication. Request the deployed page and assert status 200 and security headers.
-- [ ] Run behavior, accessibility, responsive, and reduced-motion tests against the public production URL using `BASE_URL`. Inspect mobile and desktop screenshots and browser errors. Fix, retest, commit, push, and redeploy if evidence requires it.
-- [ ] Add live/repository URLs and the 3–5 line explanation to submission notes. Remind the user to provide their own two prior projects separately; never fabricate those links. State that the date and registration URL still await event-organizer details.
-- [ ] Record live verification results, commit `docs: record deployment and submission details`, push, and verify remote `main` matches local HEAD. If a final production deploy is needed to align the deployed commit, perform it and repeat the smoke check.
-- [ ] Obtain independent final review using the applicable Superpowers review workflow, resolve actionable findings, and rerun affected checks before declaring completion.
+- [x] Confirm clean Git status, pushed commits, successful local checks, and authenticated Vercel access. Link or create the Vercel project for this folder and deploy the verified build to production. Keep `.vercel/` ignored.
+- [x] Verify deployment completion and public access without authentication. Request the deployed page and assert status 200 and security headers.
+- [x] Run behavior, accessibility, responsive, and reduced-motion tests against the public production URL using `BASE_URL`. Inspect mobile and desktop screenshots and browser errors. Fix, retest, commit, push, and redeploy if evidence requires it.
+- [x] Add live/repository URLs and the 3–5 line explanation to submission notes. Remind the user to provide their own two prior projects separately; never fabricate those links. State that the date and registration URL still await event-organizer details.
+- [x] Record live verification results, commit `docs: record deployment and submission details`, push, and verify remote `main` matches local HEAD. If a final production deploy is needed to align the deployed commit, perform it and repeat the smoke check.
+- [x] Obtain independent final review using the applicable Superpowers review workflow, resolve actionable findings, and rerun affected checks before declaring completion.
 
 ## Plan self-review
 
