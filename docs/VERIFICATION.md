@@ -12,7 +12,9 @@ User selected the second visual concept, with bold Google-style typography and l
 - Dependency audit: **0 known vulnerabilities** across runtime and development dependencies.
 - Independent source review identified motion lifecycle and accessible-heading issues; corrected before deployment. No new data collection or server input surface.
 - Desktop reference comparison, full-page inspection and mobile registration feedback: passed; see `design-qa.md`.
-- Public deployment verification: pending in this record until deployment completes.
+- Public deployment verification: **23 passed** against `https://hackheist-landing-page.vercel.app` after release, including accessibility and security-header checks.
+- Deployed application commit: `ab2d360`. Production deployment: `dpl_wXTLrDCR4YnGaTrBGEuZcLWnLZj3`, state READY. Immutable URL: `https://hackheist-landing-page-ezbf8t40q-team-divyom.vercel.app`.
+- Public site visually inspected in the in-app browser; hero ribbon loaded, selected bold typography and larger labels confirmed. Deployment uploaded only 18 source/asset files (740.3KB), excluding local logs, captures, tests, docs and environment files.
 
 The records below describe the earlier implementation and are retained as history.
 

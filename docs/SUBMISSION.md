@@ -8,9 +8,9 @@
 ## Short explanation
 
 HackHeist is a responsive, five-section event landing page for GDG on Campus MIET.
-It uses Next.js, React, TypeScript, and Tailwind CSS with an editorial layout and original SVG artwork.
-Server rendering, local fonts, and lightweight CSS motion keep the experience simple and responsive.
-The page includes keyboard navigation, reduced-motion support, and automated accessibility, responsive, and security checks.
+It uses Next.js, React, TypeScript, and Tailwind CSS with the approved Signal Ribbon design: a white canvas, bold Google Sans Flex, readable labels and a generated particle ribbon.
+Server rendering, local fonts, optimized artwork and lightweight transform/opacity motion keep the experience responsive.
+The page includes keyboard navigation, pause/resume, live reduced-motion support, one-time scroll reveals and automated accessibility, responsive and security checks.
 
 ## Information still needed from the organizer
 
