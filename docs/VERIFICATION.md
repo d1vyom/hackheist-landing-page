@@ -1,5 +1,15 @@
 # Verification record
 
+## Mobile ribbon containment fix — 11 October 2026
+
+User screenshots exposed artwork cuts and overlap missed by the earlier geometry checks. Mobile hero artwork now reserves its natural image height plus drift clearance; stacked layouts disable scroll parallax. Final CTA artwork flows beneath its copy, with clearance for entrance motion and a bottom inset.
+
+- Four new regression cases first failed for the clipped hero at 360, 390, 430 and 700px. They now sample the complete hero animation cycle and verify image containment, text separation, and final CTA/footer boundaries.
+- Full local browser suite: **27 passed**. ESLint, TypeScript and production build passed.
+- Focused independent review: no actionable findings.
+- Visual inspection at 390px confirmed both complete ribbons and separated edition labels. Ignored evidence: `.superpowers/mobile-fix/fixed-mobile.png` and `full-page.png`.
+- Live deployment verification pending until release.
+
 ## Signal Ribbon redesign — 11 October 2026
 
 User selected the second visual concept, with bold Google-style typography and larger labels. Implemented self-hosted Google Sans Flex, generated local ribbon artwork, native anchor flow and optional client motion enhancement.

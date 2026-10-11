@@ -9,6 +9,7 @@ export function MotionController() {
   useEffect(() => {
     const root = document.documentElement;
     const media = matchMedia("(prefers-reduced-motion: reduce)");
+    const compact = matchMedia("(max-width: 700px)");
     const art = document.querySelector<HTMLElement>("[data-parallax]");
     const hero = document.querySelector("#hero");
     let visible = true;
@@ -25,10 +26,18 @@ export function MotionController() {
         cancelAnimationFrame(frame);
         frame = 0;
       }
-      if (stop && art) art.style.removeProperty("transform");
+      if ((stop || compact.matches) && art)
+        art.style.removeProperty("transform");
     };
     const scroll = () => {
-      if (frame || paused || media.matches || document.hidden || !visible)
+      if (
+        frame ||
+        paused ||
+        media.matches ||
+        compact.matches ||
+        document.hidden ||
+        !visible
+      )
         return;
       frame = requestAnimationFrame(() => {
         if (art)
@@ -74,6 +83,7 @@ export function MotionController() {
     window.addEventListener("scroll", scroll, { passive: true });
     document.addEventListener("visibilitychange", sync);
     media.addEventListener("change", sync);
+    compact.addEventListener("change", sync);
     return () => {
       cancelAnimationFrame(frame);
       heroObserver.disconnect();
@@ -81,6 +91,7 @@ export function MotionController() {
       window.removeEventListener("scroll", scroll);
       document.removeEventListener("visibilitychange", sync);
       media.removeEventListener("change", sync);
+      compact.removeEventListener("change", sync);
       entrances.forEach((animation) => animation.cancel());
       delete root.dataset.motion;
     };

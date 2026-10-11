@@ -30,4 +30,8 @@ Focused inspection covered headline, nav, CTA, edition/community labels, and mob
 
 Header uses an edition label instead of a third registration button, preserving the original two-action flow. The blue period uses the font punctuation. Mobile reflows the ribbon beneath the actions to protect text readability. Motion is progressive enhancement; no content is hidden until JavaScript loads.
 
+## Mobile containment correction
+
+The supplied mobile screenshots supersede the earlier acceptance of ribbon cropping. The fixed-height hero crop and final CTA negative offsets were P2 issues. Both mobile images now reserve their full natural height in document flow; the hero has enough inset for every sampled drift phase, and mobile scroll parallax is disabled. CTA copy entrance motion has dedicated clearance. Visual inspection of `.superpowers/mobile-fix/fixed-mobile.png` confirms full ribbons with clear text and footer separation. Four geometry regressions cover 360–700px. Desktop presentation is unchanged.
+
 final result: passed
