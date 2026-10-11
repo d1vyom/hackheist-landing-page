@@ -45,7 +45,7 @@ export function SiteHeader() {
       >
         <GdgMark />
         <span>
-          GDG on Campus<span className="brand-campus">MIET</span>
+          GDG on Campus <span className="brand-campus">MIET</span>
         </span>
       </a>
       <nav aria-label="Main">
@@ -53,10 +53,7 @@ export function SiteHeader() {
         <a href="#highlights">Highlights</a>
         <a href="#event-details">Event Details</a>
       </nav>
-      <span className="header-edition mono">
-        <span className="status-dot" />
-        2026 EDITION
-      </span>
+      <span className="header-edition mono">HACKHEIST 2026</span>
     </header>
   );
 }

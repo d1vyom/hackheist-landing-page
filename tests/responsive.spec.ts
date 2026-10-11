@@ -45,6 +45,19 @@ test("enlarged text retains content and usable actions", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   await page.addStyleTag({ content: "html { font-size: 200% !important; }" });
+  const overflowing = await page.locator("body *").evaluateAll((nodes) =>
+    nodes
+      .filter((el) => {
+        const r = el.getBoundingClientRect();
+        return r.right > innerWidth + 1 && !el.closest("[aria-hidden=true]");
+      })
+      .map((el) => ({
+        tag: el.tagName,
+        className: el.className,
+        width: el.getBoundingClientRect().width,
+      })),
+  );
+  expect(overflowing).toEqual([]);
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= innerWidth,

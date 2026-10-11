@@ -1,5 +1,21 @@
 # Verification record
 
+## Signal Ribbon redesign — 11 October 2026
+
+User selected the second visual concept, with bold Google-style typography and larger labels. Implemented self-hosted Google Sans Flex, generated local ribbon artwork, native anchor flow and optional client motion enhancement.
+
+- Production build: passed; page remains prerendered.
+- TypeScript and ESLint: passed.
+- Local production browser suite: **23 passed**, including six viewport widths, 200% text sizing, no-JavaScript behavior, both registration actions, keyboard/skip link, axe accessibility scans, defensive HTTP headers and browser request/error checks.
+- Motion checks: pause/resume, switching reduced motion during an active entrance, no replay of previously read sections after resume, readable labels. The reduced-motion regression first failed with two running entrances, then passed after cancellation was implemented.
+- First redesign tests failed for missing pause control and 10px supporting labels, then passed. Enlarged text exposed a nowrap brand and heading wrapping issue; corrected. Pause testing exposed CSS specificity overriding the paused state; corrected.
+- Dependency audit: **0 known vulnerabilities** across runtime and development dependencies.
+- Independent source review identified motion lifecycle and accessible-heading issues; corrected before deployment. No new data collection or server input surface.
+- Desktop reference comparison, full-page inspection and mobile registration feedback: passed; see `design-qa.md`.
+- Public deployment verification: pending in this record until deployment completes.
+
+The records below describe the earlier implementation and are retained as history.
+
 Verified on 11 October 2026. Application commit: `26a95a6`.
 
 ## Automated checks

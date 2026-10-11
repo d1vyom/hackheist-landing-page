@@ -5,6 +5,7 @@ import {
   HighlightsSection,
 } from "@/components/event-sections";
 import { HeroArt } from "@/components/hero-art";
+import { MotionController } from "@/components/motion-controller";
 import { Arrow, RegisterLink } from "@/components/register-link";
 import { GdgMark, SiteHeader } from "@/components/site-header";
 import { event } from "@/lib/event";
@@ -19,25 +20,17 @@ export default function Home() {
       <main id="main-content" tabIndex={-1}>
         <section
           id="hero"
-          className="hero-section shell"
+          className="hero-section"
           aria-labelledby="hero-heading"
         >
-          <div className="hero-grid">
+          <div className="shell hero-grid">
             <div className="hero-copy">
-              <p className="eyebrow mono">
-                <span className="status-dot" />
-                {event.organizer} · PRESENTS
-              </p>
-              <h1 id="hero-heading" aria-label="HACKHEIST">
-                <span>HACK</span>
-                <span>
-                  HEIST
-                  <span className="title-period" aria-hidden="true">
-                    .
-                  </span>
-                </span>
+              <p className="eyebrow">{event.edition}</p>
+              <h1 id="hero-heading">
+                Build something
+                <br />
+                worth breaking<span className="text-blue">.</span>
               </h1>
-              <p className="hero-tagline">{event.tagline}</p>
               <p className="hero-description">
                 A space for curious minds, bold ideas,
                 <br className="desktop-break" /> and the people who make them
@@ -52,47 +45,19 @@ export default function Home() {
             </div>
             <HeroArt />
           </div>
-          <div className="hero-bottom">
+          <div className="shell hero-bottom">
             <div className="hero-fact">
-              <span className="fact-icon" aria-hidden="true">
-                ↗
-              </span>
-              <div>
-                <span className="mono">THE EDITION</span>
-                <span>{event.edition}</span>
-              </div>
+              <strong>HackHeist 2026</strong>
+              <span>Build something worth breaking.</span>
             </div>
             <div className="hero-fact">
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                aria-hidden="true"
-              >
-                <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" />
-                <circle cx="12" cy="10" r="2.5" />
-              </svg>
-              <div>
-                <span className="mono">THE PLACE</span>
-                <span>{event.venue}</span>
-              </div>
+              <strong>MIET</strong>
+              <span>A campus for creators.</span>
             </div>
-            <span className="hero-note mono">
-              BRING YOUR CURIOSITY.
-              <br />
-              WE’LL BRING THE COMMUNITY.
-            </span>
-            <a
-              href="#about"
-              className="scroll-cue"
-              aria-label="Scroll to About HackHeist"
-            >
-              <span className="mono">SCROLL TO DISCOVER</span>
-              <span aria-hidden="true">↓</span>
-            </a>
+            <div className="hero-fact">
+              <strong>GDG Community</strong>
+              <span>Ideas. People. Possibilities.</span>
+            </div>
           </div>
         </section>
         <AboutSection />
@@ -109,11 +74,12 @@ export default function Home() {
           <GdgMark />
           <span>{event.organizer}</span>
         </a>
-        <span className="mono">CURIOUS MINDS. SHARED POSSIBILITIES.</span>
+        <span>Curious minds. Shared possibilities.</span>
         <a href="#hero" className="back-top">
-          Back to top <span aria-hidden="true">↑</span>
+          Back to top <Arrow diagonal />
         </a>
       </footer>
+      <MotionController />
     </>
   );
 }

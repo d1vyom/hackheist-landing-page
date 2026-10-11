@@ -11,5 +11,6 @@ next-env.d.ts
 tests
 docs
 README.md
+design-qa.md
 AGENTS.md
 playwright.config.ts

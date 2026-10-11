@@ -1,6 +1,5 @@
 import "./globals.css";
-import "@fontsource-variable/manrope";
-import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource-variable/google-sans-flex";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

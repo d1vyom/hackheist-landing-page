@@ -1,6 +1,6 @@
 # HackHeist 2026
 
-A five-section event landing page for **GDG on Campus MIET**. An editorial layout pairs warm white, bold typography, Google-color accents, an original SVG vault illustration, and subtle CSS motion.
+A five-section event landing page for **GDG on Campus MIET**. The approved Signal Ribbon redesign pairs a white canvas, bold Google Sans Flex, readable event labels, a generated particle ribbon, and restrained motion inspired by the supplied Antigravity reference.
 
 **Source:** [github.com/d1vyom/hackheist-landing-page](https://github.com/d1vyom/hackheist-landing-page)
 
@@ -10,7 +10,7 @@ A five-section event landing page for **GDG on Campus MIET**. An editorial layou
 
 Next.js 16.4 · React 19.3 · TypeScript · Tailwind CSS 4.3 · Playwright · axe-core
 
-The page is prerendered with server components. It has no backend, database, analytics, client components, remote fonts, or third-party runtime scripts. Manrope and IBM Plex Mono are bundled locally through Fontsource. The included favicon and illustrations are local SVG assets.
+The page is prerendered with server components. A small client motion controller adds ribbon parallax, one-time section entrances and pause/resume. It has no backend, database, analytics, remote fonts, or third-party runtime scripts. Google Sans Flex is bundled locally through Fontsource; the generated ribbon is a local optimized WebP; icons come from Phosphor.
 
 ## Run locally
 
@@ -65,9 +65,9 @@ Import the GitHub repository into Vercel using the Next.js preset, or run `verce
 ## Design and accessibility
 
 - Exactly five semantic sections: Hero, About, Highlights, Event Details, and Final CTA.
-- Original flat-color geometric artwork; no gradient backgrounds, stock images, or animation libraries.
+- Generated particle-ribbon artwork, black pill actions and generous whitespace; no gradient backgrounds or animation framework.
 - Native anchors, skip link, visible focus states, and at least 44px link targets.
-- CSS transforms/opacity for interactions; reduced-motion preferences disable animations and smooth scrolling.
+- CSS transforms and Web Animations API entrances; reduced-motion preferences stop active animations and smooth scrolling. A visible pause control is available. Reveals do not replay after resume, and decorative motion pauses offscreen or when the page is hidden.
 - Essential content and links work without JavaScript.
 - Layout verified at 360, 390, 768, 1024, 1366, and 1920px.
 
@@ -76,6 +76,8 @@ Import the GitHub repository into Vercel using the Next.js preset, or run `verce
 - [Approved specification](docs/superpowers/specs/2026-10-11-hackheist-design.md)
 - [Implementation plan](docs/superpowers/plans/2026-10-11-hackheist.md)
 - [Architecture](docs/ARCHITECTURE.md)
+- [Approved redesign plan](docs/superpowers/plans/2026-10-11-signal-ribbon.md)
+- [Design QA](design-qa.md)
 - [Verification](docs/VERIFICATION.md)
 - [Submission notes](docs/SUBMISSION.md)
 
