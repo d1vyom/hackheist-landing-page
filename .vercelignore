@@ -14,3 +14,5 @@ README.md
 design-qa.md
 AGENTS.md
 playwright.config.ts
+output/
+tmp/

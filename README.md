@@ -82,3 +82,8 @@ Import the GitHub repository into Vercel using the Next.js preset, or run `verce
 - [Submission notes](docs/SUBMISSION.md)
 
 This implementation was developed with AI assistance. The submission explanation does not claim independent or unaided authorship.
+
+## Project summary PDF
+
+A concise overview of the technologies, architecture, security measures, tests, and deployment is available in [the project summary PDF](output/pdf/hackheist-project-summary.pdf).
+
